@@ -4,6 +4,7 @@ import Header from "./Header";
 import "./hero.css";
 
 const Hero = () => {
+
   return (
     <>
       <div className="w-full relative text-white">

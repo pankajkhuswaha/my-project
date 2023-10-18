@@ -1,12 +1,52 @@
 import React from 'react'
 import star from "../../assets/images/Star 1.png"
+import { useEffect, useState } from "react";
 
 const BookNow = () => {
+   const [isElementVisible, setElementVisibility] = useState(true);
+
+   useEffect(() => {
+     const handleScroll = () => {
+       const elementToHide = document.getElementById("elementToHide");
+       const footer = document.getElementById("footer");
+
+       if (!elementToHide || !footer) {
+         return;
+       }
+
+       // Get the position of the footer relative to the viewport
+       const footerPosition = footer.getBoundingClientRect().top;
+
+       // If the element approaches the footer (within 100 pixels), hide it
+       if (footerPosition < 518) {
+         setElementVisibility(false);
+       } else {
+         setElementVisibility(true);
+       }
+     };
+
+     // Attach the function to the scroll event
+     window.addEventListener("scroll", handleScroll);
+
+     // Cleanup the event listener on component unmount
+     return () => {
+       window.removeEventListener("scroll", handleScroll);
+     };
+   }, []);
   return (
-    <div className="w-[308px] bg-white flex flex-col justify-between bg-gray rounded-2xl fixed top-[120px] right-4 border p-4  shadow">
-      <h3 className="text-black text-3xl font-[600]">
-        Book your Car Service Now !
-      </h3>
+    <div
+      id="elementToHide"
+      className={`w-[308px] bg-white flex flex-col justify-between bg-gray rounded-2xl ${
+        isElementVisible ? "fixed top-[100px]" : "relative transition-all"
+      }  right-4 border p-4  shadow`}
+    >
+      <div className="w-[230px] h-[88px]">
+        <p className="h-[88px] top-0 left-0 font-semibold text-black text-[32px] tracking-[0.11px] leading-[44.3px]">
+          Book your Car
+          <br />
+          Service Now !
+        </p>
+      </div>
       <p className="text-gray-700 mb-0 font-bold text-lg mt-2">
         Get instant quotes for <br /> your car service
       </p>

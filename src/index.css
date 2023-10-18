@@ -9,6 +9,9 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+body{
+  overflow-x: hidden;
+}
 .almuni {
   font-family: "Alumni Sans Inline One", cursive !important;
 }
