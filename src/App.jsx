@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import BookNow from "./components/cards/bookNow";
 import Services from "./components/homepage/services";
@@ -9,6 +10,7 @@ const App = () => {
         <BookNow />
       </div>
       <Services />
+      <Footer/>
     </>
   );
 };

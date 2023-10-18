@@ -1,4 +1,5 @@
-import { serve } from "./data";
+/* eslint-disable react/jsx-no-target-blank */
+import { customerService, howservicework, nearWorkshop, reviews, serve } from "./data";
 import "./homepage.scss";
 const Services = () => {
   return (
@@ -31,25 +32,41 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="ct2 ml-4 mb-16 mt-4 p-6 flex gap-16">
-      {serve.map((ele,i)=>{
-        return (
-          <div key={i} className="w-[146px] h-[93.22px] cursor-pointer">
-            <img
-              className="w-[99.82px] h-[51.22px]"
-              alt=""
-              src="/group-7403.svg"
-            />
-            <div className=" tracking-[0.22px] font-semibold">
-              Periodic Service
+      <div className="ct2 ml-4 mb-16 mt-4 p-6 flex flex-wrap gap-4 justify-between">
+        {serve.map((ele, i) => {
+          return (
+            <div key={i} className="w-[146px] h-[93.22px] cursor-pointer">
+              <img className="w-[99.82px] h-[51.22px]" alt="" src={ele.img} />
+              <div className=" tracking-[0.22px] font-semibold">{ele.txt}</div>
             </div>
-          </div>
-        );
-      })}
-        
+          );
+        })}
       </div>
 
-      <div className="ml-4 flex flex-row items-start justify-start gap-[17px] text-center text-khaki font-poppins">
+      <div className="customerService m-4 w-[860px] mb-10">
+        <b className="text-xl tracking-[0.18px] flex font-poppins text-gray-200 text-left items-center w-[278px] h-[49px]">
+          Curated Custom Services
+        </b>
+        <div className="flex flex-wrap items-center justify-start gap-[80px] mt-2 p-3">
+          {customerService.map((service, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center justify-start gap-[20px] cursor-pointer"
+            >
+              <img
+                className="relative w-[100px] object-cover"
+                alt=""
+                src={service?.img}
+              />
+              <div className="relative tracking-[0.22px] font-semibold">
+                {service.txt}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="m-4 flex flex-row items-start justify-start gap-[17px] text-center text-khaki font-poppins">
         <div className="relative rounded-xl w-48 h-[187px] overflow-hidden shrink-0">
           <div className="absolute top-[0px] left-[0px] rounded-8xs [background:linear-gradient(180deg,_#ffe6cf,_#cbdaff)] w-48 h-[187px]" />
           <img
@@ -187,162 +204,122 @@ const Services = () => {
         </div>
       </div>
 
-      <div
-        className="absolute top-[1703px] left-[24px] w-[860px] h-[613px] text-center"
-        data-scroll-to="frameContainer1"
-      >
-        <b className="absolute top-[0px] left-[0px] text-xl tracking-[0.18px] flex font-poppins text-gray-200 text-left items-center w-[278px] h-[49px]">
-          Curated Custom Services
+      <div className="p-4 flex flex-col items-start justify-start gap-[30px] text-xl text-gray-200 font-poppins">
+        <b className="relative tracking-[0.18px] flex items-center w-[332px] h-[49px] shrink-0">
+          Choose the workshop Near You
         </b>
-        <div className="absolute top-[87px] left-[0px] flex flex-col items-center justify-start gap-[50px]">
-          <div className="flex flex-col items-center justify-start gap-[20px] cursor-pointer">
-            <img
-              className="relative w-[100px] h-[100px] object-cover"
-              alt=""
-              src="/image-3@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Batteries
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-start gap-[20px] cursor-pointer">
-            <img
-              className="relative rounded-[7.88px] w-[100px] h-[100px] object-cover"
-              alt=""
-              src="/xxhdpipng@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Lights
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-[20px] cursor-pointer">
-            <img
-              className="relative w-[100px] h-[100px] object-cover"
-              alt=""
-              src="/image-10@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Steering
-            </div>
+        <div className="relative w-[768px] h-[258.27px] overflow-hidden shrink-0 mb-16">
+          <div className="absolute top-[0px] left-[0px] rounded-4xs-5 bg-white w-[768px] h-[258.27px]" />
+          <div className="absolute top-[0px] left-[0px] rounded-4xs-5 w-[829.17px] overflow-x-auto flex flex-row items-start justify-start gap-[16.99px]">
+            {nearWorkshop.map((shop, i) => {
+              return (
+                <img
+                  key={i}
+                  className="relative rounded-xl w-[265.06px] h-[258.27px] object-cover"
+                  alt=""
+                  src={shop.img}
+                />
+              );
+            })}
           </div>
         </div>
-        <div className="absolute top-[88px] left-[353px] h-[546px] flex flex-col items-center justify-start gap-[50px]">
-          <div className="flex flex-col items-center justify-start gap-[20px] cursor-pointer">
-            <img
-              className="relative w-[100px] h-[98px] object-cover"
-              alt=""
-              src="/image-5@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Brakes
-            </div>
-          </div>
-          <div className="h-44 flex flex-col items-center justify-center gap-[20px] cursor-pointer">
-            <img
-              className="relative w-[100px] h-[100px] object-cover"
-              alt=""
-              src="/-25003388@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Car Detailing
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-start gap-[20px] cursor-pointer">
-            <img
-              className="relative w-[142px] h-[71px] object-cover"
-              alt=""
-              src="/image-7@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Body Parts
-            </div>
-          </div>
+      </div>
+
+      <div
+        className="relative w-[588px] m-4 text-xl text-gray-200 font-poppins"
+        data-scroll-to="groupContainer"
+      >
+        <b className=" tracking-[0.18px] flex items-center w-[282px] h-[49px]">
+          How Car Service Works ?
+        </b>
+        <div className="flex gap-4 flex-wrap justify-between">
+          {howservicework.map((service, i) => {
+            return (
+              <div
+                key={i}
+                className="w-[264px] gap-3 flex items-center justify-end flex-col"
+              >
+                <img src={service.img} width={"200px"} alt={service.txt} />
+                <b>{service.txt}</b>
+              </div>
+            );
+          })}
         </div>
-        <div className="absolute top-[87px] left-[181px] flex flex-col items-center justify-start gap-[50px]">
-          <div className="flex flex-col items-center justify-start gap-[20px] cursor-pointer">
-            <img
-              className="relative rounded-[7.88px] w-[100px] h-[100px] object-cover"
-              alt=""
-              src="/xxhdpipng1@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              AC Parts
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-start gap-[20px] cursor-pointer">
-            <img
-              className="relative w-[100px] h-[100px] object-cover"
-              alt=""
-              src="/image-8@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Glasses
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-[20px] cursor-pointer">
-            <img
-              className="relative w-[100px] h-[100px] object-cover"
-              alt=""
-              src="/xxhdpi-1@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Suspension
-            </div>
-          </div>
-        </div>
-        <div className="absolute top-[88.62px] left-[544px] flex flex-col items-center justify-start gap-[50px]">
-          <div className="flex flex-col items-center justify-start gap-[20px] cursor-pointer">
-            <img
-              className="relative w-[100px] h-[96.77px] object-cover"
-              alt=""
-              src="/image-6@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Clutch
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-[20px] cursor-pointer">
-            <img
-              className="relative w-[100px] h-[100px] object-cover"
-              alt=""
-              src="/image-9@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Tyres
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-[50px] cursor-pointer">
-            <img
-              className="relative w-[100px] h-[68.47px] object-cover"
-              alt=""
-              src="/image-11@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Side Mirror
-            </div>
-          </div>
-        </div>
-        <div className="absolute top-[87px] left-[724px] flex flex-col items-center justify-start gap-[50px]">
-          <div className="flex flex-col items-center justify-start gap-[20px] cursor-pointer">
-            <img
-              className="relative rounded-[62.5px] w-[100px] h-[100px] object-cover"
-              alt=""
-              src="/obdpng@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Go connect 2.0
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-[20px] cursor-pointer">
-            <img
-              className="relative rounded-[7.88px] w-[100px] h-[100px] object-cover"
-              alt=""
-              src="/xxhdpipng2@2x.png"
-            />
-            <div className="relative tracking-[0.22px] font-semibold">
-              Car Spa
-            </div>
-          </div>
+      </div>
+
+      <div
+        className="relative w-[588px] m-4 mt-20 pb-4 text-xl text-gray-200 font-poppins"
+        data-scroll-to="groupContainer"
+      >
+        <b className="tracking-[0.18px] flex items-center w-[392px] h-[49px]">
+          What Car Owners in Hyderabad Say
+        </b>
+        <div className="w-[775px] h-[965px] flex flex-wrap gap-4 text-base">
+          {
+            reviews.map((review,i)=>{
+              return (
+                <div
+                  key={i}
+                  className="relative left-[0px] w-[376px] h-[300px]"
+                >
+                  <img
+                    className=" absolute -z-10 w-[376px] h-[300px] object-cover"
+                    alt=""
+                    src="/group-7462@2x.png"
+                  />
+                  <div className="p-4 pt-8">
+                    <div className="absolute w-[287px] h-[49px] top-[52px] left-[25px]">
+                      <img
+                        className="absolute w-[48px] h-[48px] top-0 left-0 object-cover"
+                        alt="Ellipse"
+                        src={review.img}
+                      />
+                      <div className="absolute w-[218px] h-[49px] top-0 left-[73px]">
+                        <div className="relative w-[214px] h-[49px]">
+                          <div className="absolute w-[189px] top-0 left-0 [font-family:'Poppins-SemiBold',Helvetica] font-semibold text-[#001b39] text-[16px] tracking-[0.18px] leading-[normal]">
+                            {review.name}
+                          </div>
+                          <div className="absolute w-[106px] h-[17px] top-[30px] left-0">
+                            <img
+                              className="left-0 absolute w-[17px] h-[17px] top-0 object-cover"
+                              alt="Image"
+                              src="/image-91@2x.png"
+                            />
+                            <img
+                              className="left-[22px] absolute w-[17px] h-[17px] top-0 object-cover"
+                              alt="Image"
+                              src="/image-91@2x.png"
+                            />
+                            <img
+                              className="left-[44px] absolute w-[17px] h-[17px] top-0 object-cover"
+                              alt="Image"
+                              src="/image-91@2x.png"
+                            />
+                            <img
+                              className="left-[66px] absolute w-[17px] h-[17px] top-0 object-cover"
+                              alt="Image"
+                              src="/image-91@2x.png"
+                            />
+                            <img
+                              className="left-[89px] absolute w-[17px] h-[17px] top-0 object-cover"
+                              alt="Image"
+                              src="/image-91@2x.png"
+                            />
+                          </div>
+                          <div className="absolute h-[15px] top-[32px] left-[127px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#4a4a4a] text-[12px] tracking-[0.22px] leading-[normal]">
+                            {review.old}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="absolute w-[338px] top-[122px] left-[22px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#282828] text-[12px] tracking-[0.22px] leading-[18.4px]">
+                     {review.review}
+                    </p>
+                  </div>
+                </div>
+              );
+            })
+          }
         </div>
       </div>
     </div>
@@ -350,3 +327,6 @@ const Services = () => {
 };
 
 export default Services;
+
+
+
