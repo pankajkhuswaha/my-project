@@ -1,16 +1,12 @@
-import hero from "../assets/images/hero.png";
-import star from "../assets/images/Mask group.png";
-import Header from "./Header";
+import star from "../../../assets/images/Mask group.png";
 import "./hero.css";
 
 const Hero = () => {
 
   return (
     <>
-      <div className="w-full relative text-white">
-        <img src={hero} alt="" className=" top-0 w-full" />
-        <div className="z-10 absolute top-0 w-full">
-          <Header />
+      <div id="hero" style={{background:"url(/hero.png)"}} className="w-full pt-[64px] relative text-white">
+        <div className="z-10 top-0 w-full">
           <div className="w-[70%] p-4 mt-10">
             <p className="experince ">
               Experience The Best Car Services In Hyedrabad
@@ -25,8 +21,8 @@ const Hero = () => {
               porta, luctus libero eget, feugiat velit. Sed aliquet leo et ex
               sodales,
             </p>
-            <div className="w-[70%] flex mt-4">
-              <div className="w-1/2 text-2xl border-r-2  font-bold flex gap-3 items-start">
+            <div className="w-[70%] flex mt-4 mb-4">
+              <div className="w-1/2 text-2xl border-r-2 border-white  font-bold flex gap-3 items-start">
                 <div style={{ width: "67px", height: "67px", flexShrink: 0 }}>
                   <img src={star} alt="" />
                 </div>

@@ -1,0 +1,1 @@
+export const baseUrl = "https://kv-varlu.vercel.app/api/v1";

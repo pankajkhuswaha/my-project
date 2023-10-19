@@ -1,5 +1,4 @@
-import React from 'react'
-import star from "../../assets/images/Star 1.png"
+import star from "../../../assets/images/Star 1.png"
 import { useEffect, useState } from "react";
 
 const BookNow = () => {
@@ -36,7 +35,7 @@ const BookNow = () => {
   return (
     <div
       id="elementToHide"
-      className={`w-[308px] bg-white flex flex-col justify-between bg-gray rounded-2xl ${
+      className={`w-[308px] z-[1] bg-white flex flex-col justify-between bg-gray rounded-2xl ${
         isElementVisible ? "fixed top-[100px]" : "relative transition-all"
       }  right-4 border p-4  shadow`}
     >

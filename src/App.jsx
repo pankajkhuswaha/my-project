@@ -1,16 +1,20 @@
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import BookNow from "./components/cards/bookNow";
-import Services from "./components/homepage/services";
+import Homepage from "./pages/homepage";
+import Blog from "./pages/blogs";
+import Header from './components/Header';
+  import { ToastContainer } from "react-toastify";
+  import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   return (
     <>
-      <div className="flex items-center justify-center">
-        <Hero />
-        <BookNow />
-      </div>
-      <Services />
-      <Footer/>
+    <ToastContainer/>
+   <Header/>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/blogs" element={<Blog />} />
+      </Routes>
+      <Footer />
     </>
   );
 };

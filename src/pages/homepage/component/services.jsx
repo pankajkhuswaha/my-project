@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
-import { customerService, howservicework, nearWorkshop, reviews, serve } from "./data";
-import "./homepage.scss";
+import { customerService, howservicework, nearWorkshop, reviews, serve } from "../data";
 const Services = () => {
   return (
     <div className="servicecontainer">
