@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 export const Login = ({ hide, show, view }) => {
   const [mobileNumber, setmobileNumber] = useState("");
-  const [otp, setotp] = useState("")
+  const [otp, setotp] = useState("");
   const [hidemobileno, setHidemobileno] = useState(true);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +23,10 @@ export const Login = ({ hide, show, view }) => {
   const handleotpverify = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${baseUrl}/verify/otp`, { mobileNumber,otp });
+      const res = await axios.post(`${baseUrl}/verify/otp`, {
+        mobileNumber,
+        otp,
+      });
       toast.success(res.data.message);
       localStorage.setItem("token", res.data.token);
       hide();
@@ -73,40 +76,41 @@ export const Login = ({ hide, show, view }) => {
                 </div>
               </div>
             </div>
-            <div className="inline-flex cursor-pointer items-start gap-[6.36px] px-[155.15px] py-[9.54px] absolute top-[498px] left-[41px] bg-[#3f7ccd] rounded-[6.36px] overflow-hidden">
-              <button
-                type="submit"
-                className="relative cursor-pointer w-fit mt-[-1.27px] [font-family:'Poppins-Bold',Helvetica] font-bold text-white text-[15.9px] tracking-[0.14px] leading-[normal]"
-              >
-                Continue
-              </button>
-            </div>
-          </form>
-        )}
-        {!hidemobileno &&<form onSubmit={handleotpverify}>
-          <div className="absolute w-[387px] h-[50px] top-[429px] left-[41px] rounded-[6.36px] border-[1.27px] border-solid border-[#3f7ccd]">
-            <div className="inline-flex items-center gap-[19.08px] relative top-[11px] left-[18px]">
-              
-              <div className="relative w-[300px] h-[35px] font-medium text-[#3f7ccd] text-[12.7px] tracking-[0.14px] leading-[normal]">
-                <input
-                  type="text"
-                  placeholder="Enter OTP to Continue..."
-                  value={otp}
-                  onChange={(e) => setotp(e.target.value)}
-                  className="h-full w-full focus:outline-none -mt-1"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="inline-flex cursor-pointer items-start gap-[6.36px] px-[155.15px] py-[9.54px] absolute top-[498px] left-[41px] bg-[#3f7ccd] rounded-[6.36px] overflow-hidden">
             <button
               type="submit"
-              className="relative cursor-pointer w-fit mt-[-1.27px] [font-family:'Poppins-Bold',Helvetica] font-bold text-white text-[15.9px] tracking-[0.14px] leading-[normal]"
+              className="inline-flex cursor-pointer items-start gap-[6.36px] px-[155.15px] py-[9.54px] absolute top-[498px] left-[41px] bg-[#3f7ccd] rounded-[6.36px] overflow-hidden"
             >
-              Continue
+              <div className="relative cursor-pointer w-fit mt-[-1.27px] [font-family:'Poppins-Bold',Helvetica] font-bold text-white text-[15.9px] tracking-[0.14px] leading-[normal]">
+                Continue
+              </div>
             </button>
-          </div>
-        </form>}
+          </form>
+        )}
+        {!hidemobileno && (
+          <form onSubmit={handleotpverify}>
+            <div className="absolute w-[387px] h-[50px] top-[429px] left-[41px] rounded-[6.36px] border-[1.27px] border-solid border-[#3f7ccd]">
+              <div className="inline-flex items-center gap-[19.08px] relative top-[11px] left-[18px]">
+                <div className="relative w-[300px] h-[35px] font-medium text-[#3f7ccd] text-[12.7px] tracking-[0.14px] leading-[normal]">
+                  <input
+                    type="text"
+                    placeholder="Enter OTP to Continue..."
+                    value={otp}
+                    onChange={(e) => setotp(e.target.value)}
+                    className="h-full w-full focus:outline-none -mt-1"
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="inline-flex cursor-pointer items-start gap-[6.36px] px-[155.15px] py-[9.54px] absolute top-[498px] left-[41px] bg-[#3f7ccd] rounded-[6.36px] overflow-hidden"
+            >
+              <div className="relative cursor-pointer w-fit mt-[-1.27px] [font-family:'Poppins-Bold',Helvetica] font-bold text-white text-[15.9px] tracking-[0.14px] leading-[normal]">
+                Continue
+              </div>
+            </button>
+          </form>
+        )}
       </div>
     </div>
   );
