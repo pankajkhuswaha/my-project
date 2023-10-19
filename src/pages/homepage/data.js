@@ -96,22 +96,22 @@ export const nearWorkshop = [
 ];
 export const howservicework = [
   {
-    img:"/city-driverpana-1@2x.png",
-    txt:"Free Pickup Drop"
+    img: "/city-driverpana-1@2x.png",
+    txt: "Free Pickup Drop",
   },
   {
-    img:"/image-153@2x.png",
-    txt:"Genuine Parts"
+    img: "/image-153@2x.png",
+    txt: "Genuine Parts",
   },
   {
-    img:"/product-qualitypana-1@2x.png",
-    txt:"30 Days Warranty"
+    img: "/product-qualitypana-1@2x.png",
+    txt: "30 Days Warranty",
   },
   {
-    img:"/518130piyi3z929ai-1@2x.png",
-    txt:"Affordable Price"
-  }
-]
+    img: "/518130piyi3z929ai-1@2x.png",
+    txt: "Affordable Price",
+  },
+];
 export const reviews = [
   {
     name: "Mohith Reddy",
@@ -162,4 +162,30 @@ export const reviews = [
     old: "1 MONTH AGO",
   },
 ];
+export const carname = [
+  // Car Manufacturers
+  { name: "Jeep", image: "/image-86@2x.png" },
+  { name: "Hyundai", image: "/hyundai.png" },
+  { name: "Maruti Suzuki", image: "/suzuki.png" },
+  { name: "Bently", image: "/bentley.png" },
+  { name: "Mercedes", image: "/merities.png" },
+  { name: "Lexus", image: "/lewds.png" },
+  { name: "Mahindra", image: "/mahindra.png" },
+  // { name: "Toyota", image: "/image-103@2x.png" },
+  { name: "Tata", image: "/tata.png" },
+  { name: "Ferrari", image: "/frarai.png" },
+];
 
+export const carmodel = [
+  // Car Models
+  { name: "Swift Desire", image: "/image-105@2x.png" },
+  { name: "Baleno", image: "/image-104@2x.png" },
+  { name: "Celerio", image: "/image-99@2x.png" },
+  { name: "Swift", image: "/image-105@2x.png" },
+];
+export const fueltype = [
+  // Fuel Types
+  { name: "Petrol", image: "/image-109@2x.png" },
+  { name: "CNG", image: "/image-110@2x.png" },
+  { name: "Diesel", image: "/image-111@2x.png" },
+];
